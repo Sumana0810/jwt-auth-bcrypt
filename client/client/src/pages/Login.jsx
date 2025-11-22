@@ -1,8 +1,9 @@
+import React from "react";
 import { useForm } from "react-hook-form";
-import { UseNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { login } from "../services/authService";
 export default function Login() {
-  const navigate = UseNavigate();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -39,7 +40,7 @@ export default function Login() {
             type="password"
             placeholder="Enter the Password"
             className="w-full p-2 border rounded"
-            {...register("email", { required: "Password is required" })}
+            {...register("password", { required: "Password is required" })}
           />
           {errors.password && (
             <p className="text-red-600">{errors.password.message}</p>
